@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.80">
+<title>NYZ ANDALUSIAN</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg-row-1:#3b0a6a;
+    --bg-row-2:#24003f;
+    --text-main:#ffffff;
+    --text-muted:#caa9ff;
+}
+
+/* Reset y body */
+*{margin:0; padding:0; box-sizing:border-box; font-family:'Germania One', sans-serif;}
+body{
+    background: radial-gradient(circle at top, #2a004f, #140022);
+    color:var(--text-main);
+    min-height:95vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+}
+
+.table-nyz caption,
+.table-new caption{
+    padding-left:20px;
+}
+
+.table-container{
+    width:95%;
+    max-width:700px;
+    margin:60px auto;
+}
+
+/* SCROLL HORIZONTAL PARA TODAS LAS TABLAS */
+.table-scroll{
+    display:flex;
+    overflow-x:auto;
+    gap:20px;
+}
+
+/* Contenedor vertical para NYZ/NEW dentro del scroll */
+.table-vertical{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    min-width:100%; /* Forzar ancho completo dentro del scroll */
+}
+
+/* TABLAS */
+table{
+    border-collapse:collapse;
+    border-radius:16px;
+    overflow:hidden;
+    background:#1b0030;
+    min-width:600px; /* ancho mínimo para scroll horizontal */
+}
+
+.table-vertical table{
+    min-width:100%; /* asegurar que 2A y 2B ocupen todo el ancho */
+}
+
+thead{
+    background:linear-gradient(90deg,#5d19b7,#4b0f8a);
+}
+
+thead th{
+    padding:10px 14px;
+    font-size:13px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    text-align:center;
+    color:var(--text-muted);
+}
+
+thead th:first-child{
+    text-align:left;
+    padding-left:15px;
+}
+
+td{
+    padding:8px 10px;
+    font-size:0.8rem;
+    text-align:center;
+}
+
+td:first-child{
+    padding-left:15px;
+}
+
+.team{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.team img{
+    width:30px;
+    height:30px;
+    object-fit:contain;
+}
+
+.pts{font-weight:700;}
+.pct{color:#bfa6ff;}
+
+/* TABLA 1: alternancia morada */
+.table-scroll table:nth-child(1) tbody tr:nth-child(odd){background:#3b0a6a;}
+.table-scroll table:nth-child(1) tbody tr:nth-child(even){background:#24003f;}
+
+/* TABLA 2A: NYZ TEAMS morado */
+.table-nyz tbody tr:nth-child(odd){background:#3b0a6a;}
+.table-nyz tbody tr:nth-child(even){background:#24003f;}
+
+/* TABLA 2B: NEW TEAMS azul */
+.table-new tbody tr:nth-child(odd){background:#11216a;}
+.table-new tbody tr:nth-child(even){background:#01014d;}
+
+/* Encabezados de imágenes centradas y más grandes */
+thead th img{
+    height:26px;
+    display:block;
+    margin:auto;
+}
+
+/* Responsive: tablas ocupan 100% ancho en móvil */
+@media (max-width:600px){
+    .table-scroll table{
+        min-width:100% !important;
+    }
+    .table-vertical table{
+        min-width:100% !important;
+    }
+    table{font-size:clamp(10px,2vw,14px);}
+    td{padding:4px 6px;}
+    thead th{padding:6px 8px; font-size:12px;}
+    .team img{width:30px;height:30px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="table-container">
+
+    <!-- SCROLL HORIZONTAL -->
+    <div class="table-scroll">
+
+        <!-- TABLA 1 -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Equipos</th>
+                    <th>Puntos</th>
+                    <th>PCT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><div class="team"><img src="logos/madrid.png"><span>MADRID LUNAR</span></div></td><td class="pts">277</td><td class="pct">0.571</td></tr>
+                <tr><td><div class="team"><img src="logos/barça.png"><span>BARÇA RABBITS</span></div></td><td class="pts">260</td><td class="pct">0.536</td></tr>
+                <tr><td><div class="team"><img src="logos/dragon.png"><span>DRAGON CELTICS</span></div></td><td class="pts">236</td><td class="pct">0.505</td></tr>
+                <tr><td><div class="team"><img src="logos/milwaukee.png"><span>MILWAUKEE DEERS</span></div></td><td class="pts">162</td><td class="pct">0.432</td></tr>
+                <tr><td><div class="team"><img src="logos/expanding.png"><span>EXPANDING</span></div></td><td class="pts">161</td><td class="pct">0.444</td></tr>
+                <tr><td><div class="team"><img src="logos/mad.png"><span>MADESPAIN</span></div></td><td class="pts">146</td><td class="pct">0.508</td></tr>
+                <tr><td><div class="team"><img src="logos/chiclana.png"><span>CHICLANA BULLS</span></div></td><td class="pts">125</td><td class="pct">0.538</td></tr>
+                <tr><td><div class="team"><img src="logos/bayern.png"><span>BAYERN SQUIRREL</span></div></td><td class="pts">112</td><td class="pct">0.717</td></tr>
+                <tr><td><div class="team"><img src="logos/sdj.png"><span>SUPER DREAM JAM</span></div></td><td class="pts">108</td><td class="pct">0.533</td></tr>
+                <tr><td><div class="team"><img src="logos/kitsune.png"><span>KITSUNE</span></div></td><td class="pts">79</td><td class="pct">0.486</td></tr>
+                <tr><td><div class="team"><img src="logos/eagle.png"><span>EAGLE LAKERS</span></div></td><td class="pts">73</td><td class="pct">0.270</td></tr>
+                <tr><td><div class="team"><img src="logos/renektis.png"><span>RENEKTIS</span></div></td><td class="pts">58</td><td class="pct">0.455</td></tr>
+                <tr><td><div class="team"><img src="logos/houston.png"><span>HOUSTON SOCKETS</span></div></td><td class="pts">42</td><td class="pct">0.414</td></tr>
+                <tr><td><div class="team"><img src="logos/warriors.png"><span>WARRIORS</span></div></td><td class="pts">0</td><td class="pct">0.000</td></tr>
+            </tbody>
+        </table>
+
+        <!-- TABLAS 2A + 2B apiladas verticalmente -->
+        <div class="table-vertical">
+
+            <!-- NYZ TEAMS -->
+            <div class="table-nyz">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NYZ TEAMS</th>
+                            <th><img src="logos/1nyz.png"></th>
+                            <th><img src="logos/2nyz.png"></th>
+                            <th><img src="logos/1nyzand.png"></th>
+                            <th><img src="logos/2nyzand.png"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><div class="team"><img src="logos/madrid.png"><span>MADRID LUNAR</span></div></td><td>1</td><td>3</td><td>0</td><td>0</td></tr>
+                        <tr><td><div class="team"><img src="logos/barça.png"><span>BARÇA RABBITS</span></div></td><td>3</td><td>0</td><td>0</td><td>0</td></tr>
+						<tr><td><div class="team"><img src="logos/milwaukee.png"><span>MILWAUKEE DEERS</span></div></td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td><div class="team"><img src="logos/dragon.png"><span>DRAGON CELTICS</span></div></td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+                        <tr><td><div class="team"><img src="logos/expanding.png"><span>EXPANDING</span></div></td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+                        <tr><td><div class="team"><img src="logos/renektis.png"><span>RENEKTIS</span></div></td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td><div class="team"><img src="logos/houston.png"><span>HOUSTON SOCKETS</span></div></td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- NEW TEAMS -->
+            <div class="table-new">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NEW TEAMS</th>
+                            <th><img src="logos/1new.png"></th>
+                            <th><img src="logos/2new.png"></th>
+                            <th><img src="logos/1nyzand.png"></th>
+                            <th><img src="logos/2nyzand.png"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><div class="team"><img src="logos/chiclana.png"><span>CHICLANA BULLS</span></div></td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td><div class="team"><img src="logos/bayern.png"><span>BAYERN SQUIRREL</span></div></td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td><div class="team"><img src="logos/sdj.png"><span>SUPER DREAM JAM</span></div></td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
+                        <tr><td><div class="team"><img src="logos/mad.png"><span>MADESPAIN</span></div></td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td><div class="team"><img src="logos/kitsune.png"><span>KITSUNE</span></div></td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td><div class="team"><img src="logos/eagle.png"><span>EAGLE LAKERS</span></div></td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td><div class="team"><img src="logos/warriors.png"><span>WARRIORS</span></div></td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div> <!-- fin table-vertical -->
+
+    </div> <!-- fin table-scroll -->
+
+</div>
+</body>
+</html>
